@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="26409" started-at="2017-08-20T08:18:02Z" finished-at="2017-08-20T08:18:29Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="26409" started-at="2017-08-20T08:18:02Z" finished-at="2017-08-20T08:18:29Z">
+      <class name="com.techbodhi.selenium.testng.DropDown">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.techbodhi.selenium.testng.DropDown@ae45eb6]" name="setUp" is-config="true" duration-ms="17268" started-at="2017-08-20T13:48:02Z" finished-at="2017-08-20T13:48:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="selectDropDownValue()[pri:0, instance:com.techbodhi.selenium.testng.DropDown@ae45eb6]" name="selectDropDownValue" duration-ms="6228" started-at="2017-08-20T13:48:20Z" finished-at="2017-08-20T13:48:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectDropDownValue -->
+        <test-method status="PASS" signature="checkDropDownValues()[pri:1, instance:com.techbodhi.selenium.testng.DropDown@ae45eb6]" name="checkDropDownValues" duration-ms="908" started-at="2017-08-20T13:48:26Z" finished-at="2017-08-20T13:48:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkDropDownValues -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.techbodhi.selenium.testng.DropDown@ae45eb6]" name="tearDown" is-config="true" duration-ms="1936" started-at="2017-08-20T13:48:27Z" finished-at="2017-08-20T13:48:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.techbodhi.selenium.testng.DropDown -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
