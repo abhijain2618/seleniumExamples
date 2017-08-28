@@ -27,12 +27,13 @@ public class ExampleOne {
 		driver.get("http://demoqa.com/registration/");
 	}
 
-	@Test
+	@Test(enabled=false)
 	public void passwordValueTest() {
 		String passwordText = null;
 		passwordText = driver.findElement(By.id("piereg_passwordStrength"))
 				.getText();
 		assertEquals(passwordText, "Strength Indicator");
+		driver.switchTo().parentFrame();
 	}
 
 	@Test
@@ -45,7 +46,7 @@ public class ExampleOne {
 
 	@AfterClass
 	public void quitAll() {
-		// driver.quit();
+		driver.quit();
 	}
 
 }

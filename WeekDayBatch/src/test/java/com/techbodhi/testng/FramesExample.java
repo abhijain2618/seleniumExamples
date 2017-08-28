@@ -42,7 +42,7 @@ public class FramesExample {
 		wait.until(ExpectedConditions
 				.frameToBeAvailableAndSwitchToIt("topFrame"));
 
-		driver.switchTo().frame("topFrame");
+		//driver.switchTo().frame("topFrame");
 
 		String textValue = driver.findElement(By.xpath("html/body/div[1]/p"))
 				.getText();
