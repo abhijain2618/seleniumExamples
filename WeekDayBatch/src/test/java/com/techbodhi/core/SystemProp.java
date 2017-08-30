@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
+import com.techbodhi.constants.Constant;
+
 public class SystemProp {
 
 	public static void getFireFoxProperty() {
@@ -24,6 +26,25 @@ public class SystemProp {
 
 
 	public static WebDriver getDriver(String browserName) {
+		if (browserName.equalsIgnoreCase("ie")) {
+			getIEProperty();
+			WebDriver driver = new InternetExplorerDriver();
+			return driver;
+		}
+		else if (browserName.equalsIgnoreCase("chrome")) {
+			getChromeProperty();
+			return new ChromeDriver();
+		}else{
+			getFireFoxProperty();
+			WebDriver driver = new FirefoxDriver();
+			return driver;
+		}
+		
+	}
+	public static WebDriver getDriver() {
+		PropertySystem propertySystem = new PropertySystem(Constant.PROPERTIES_FILE_NAME);
+		String browserName = propertySystem.getProperty("BROWSER");
+		System.out.println(browserName);
 		if (browserName.equalsIgnoreCase("ie")) {
 			getIEProperty();
 			WebDriver driver = new InternetExplorerDriver();

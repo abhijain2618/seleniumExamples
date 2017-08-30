@@ -45,7 +45,7 @@ public class ExcelUtils {
 				Cell.setCellValue(Result);
 
 			FileOutputStream fileOut = new FileOutputStream(
-					Constant.Path_TestData + Constant.File_TestData);
+					Constant.FILE_NAME + Constant.PATH_TEST_DATA_FOLDER);
 			ExcelWBook.write(fileOut);
 			fileOut.flush();
 			fileOut.close();

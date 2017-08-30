@@ -2,14 +2,11 @@ package com.techbodhi.constants;
 
 public class Constant {
 
-   public static final String URL = "http://www.store.demoqa.com";
 
-   public static final String Username = "testuser_1";
-
-   public static final String Password = "Test@123";
-
-   public static final String Path_TestData = "C:\\Users\\Abhishek\\Desktop\\Training\\";
-
-   public static final String File_TestData = "testData.xlsx";
+   public static final String PATH_TEST_DATA_FOLDER = "C:\\Selenium\\";
+   //"C:\Selenium\testData.xlsx"
+   public static final String FILE_NAME = "testData.xlsx";
+   
+   public static String PROPERTIES_FILE_NAME = "selenium.properties";
 
 }
