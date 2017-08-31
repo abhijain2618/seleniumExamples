@@ -15,7 +15,7 @@ public class PasswordTest {
 	RegistrationPageObjects pageObjects;
 	String strengthValue;
 
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void setUp() {
 		SystemProp.getFireFoxProperty();
 		driver = new FirefoxDriver();
@@ -23,7 +23,7 @@ public class PasswordTest {
 		pageObjects = new RegistrationPageObjects();
 	}
 
-	@Test
+	@Test(groups = { "regression" })
 	public void NoPasswordEntered() {
 		WebElement strenthIndicator = pageObjects.findStrenghIndicator(driver);
 		strengthValue = strenthIndicator.getText();
@@ -33,7 +33,7 @@ public class PasswordTest {
 			System.out.println("test case failed");
 	}
 
-	@Test
+	@Test(groups = { "end-to-end" ,"regression"})
 	public void PasswordEntered_Error_Mismatch() {
 
 		WebElement password = pageObjects.findPassword(driver);
@@ -48,7 +48,7 @@ public class PasswordTest {
 			System.out.println("test case failed");
 	}
 
-	@AfterClass
+	@AfterClass(alwaysRun = true)
 	public void closeAll() {
 		 driver.quit();
 	}

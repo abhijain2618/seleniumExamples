@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" >
+<suite name="Suite">
 	<test name="Test">
 		<groups>
-			<define name="include-group">
-				<include name="include-test-one" />
-				<include name="include-test-two" />
+			<define name="include-regression">
+				<include name="regression" />
+			</define>
+			<define name="include-end-to-end">
+				<include name="end-to-end" />
 			</define>
 			<run>
-				<include name="include-group" />
+				<include name="include-end-to-end" />
 			</run>
 		</groups>
 
 		<classes>
 			<class name="com.techbodhi.testng.PasswordTest" />
+			<class name="com.techbodhi.testng.DropDownExample" />
 		</classes>
 
 		<!-- <packages> <package name="com.techbodhi.testng" /> </packages> -->

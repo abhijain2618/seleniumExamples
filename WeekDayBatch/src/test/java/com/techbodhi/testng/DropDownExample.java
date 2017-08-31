@@ -17,7 +17,7 @@ public class DropDownExample {
 	RegistrationPageObjects pageObjects;
 	String strengthValue;
 	
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void setUp(){
 
 		driver = SystemProp.getDriver("firefox");
@@ -25,14 +25,14 @@ public class DropDownExample {
 		pageObjects = new RegistrationPageObjects();
 	}
 	
-	@Test (priority=0)
+	@Test (groups = { "regression" })
 	public void checkDropDown_Index(){
 	
 		Select dropDown = new Select (pageObjects.findDropDown(driver));
 		dropDown.selectByIndex(6);
 	}
 	
-	@Test
+	@Test(groups = { "end-to-end" ,"regression"})
 	public void checkDropDown_VisibleText(){
 		Select dropDown = new Select(pageObjects.findDropDownDate(driver));
 		dropDown.selectByVisibleText("23");
@@ -43,19 +43,19 @@ public class DropDownExample {
 		}
 	}
 	
-	@Test
+	@Test(groups = { "end-to-end" ,"regression"})
 	public void checkDropDown_Value(){
 		Select dropDown = new Select(pageObjects.findDropDownYear(driver));
 		dropDown.selectByValue("2006");
 	}
 	
-	@Test 
+	@Test (groups = { "end-to-end" ,"regression"})
 	public void selectLastElementInDate(){
 		Select dropDown = new Select(pageObjects.findDropDownDate(driver));
 		selectDropDownByLastIndex(dropDown);
 	}
 	
-	@Test 
+	@Test (groups = { "regression" })
 	public void selectLastElementInMonth(){
 		Select dropDown = new Select(pageObjects.findDropDownMonth(driver));
 		selectDropDownByLastIndex(dropDown);
@@ -67,7 +67,7 @@ public class DropDownExample {
 		dropDown.selectByIndex(sizeOfDropDown-1);
 	}
 	
-	@Test 
+	@Test (groups = { "regression" })
 	public void selectLastElementInMonthWebElement(){
 		selectDropDownByLastIndexUsingWebElement(pageObjects.findDropDownMonth(driver));
 	}
@@ -80,7 +80,7 @@ public class DropDownExample {
 	}
 	
 	
-	@AfterClass
+	@AfterClass(alwaysRun = true)
 	public void closeAll(){
 		driver.quit();
 	}
