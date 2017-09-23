@@ -16,7 +16,6 @@ public class PageScrollExample {
 	@BeforeClass
 	public void setUp(){
 		
-		
 		driver = SystemProp.getDriver();
 		//driver.get("https://www.flipkart.com/");
 	}

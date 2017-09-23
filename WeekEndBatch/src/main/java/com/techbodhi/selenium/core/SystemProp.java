@@ -1,9 +1,14 @@
 package com.techbodhi.selenium.core;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class SystemProp {
 
@@ -22,7 +27,7 @@ public class SystemProp {
 	}
 	public static WebDriver getDriver(){
 		WebDriver driver;
-		String browserName = "firefox";
+		String browserName = "remotefirefox";
 		if(browserName.equalsIgnoreCase("chrome")){
 			getChromeProperties();
 			driver = new ChromeDriver();
@@ -32,7 +37,22 @@ public class SystemProp {
 			getInternetExplorerProperties();
 			driver = new InternetExplorerDriver();
 			return driver;	
-		}else{
+		}
+		else if(browserName.equalsIgnoreCase("remotefirefox")){
+			DesiredCapabilities capabilities = new DesiredCapabilities();
+			capabilities.firefox();
+			capabilities.setBrowserName("firefox");
+			try {
+				return new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
+			} catch (MalformedURLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return null;
+			}
+		}
+		
+		
+		else{
 			getFireFoxProperties();
 			driver = new FirefoxDriver();
 			return driver;

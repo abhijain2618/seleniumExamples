@@ -16,6 +16,10 @@ public class TestExcelRead {
 			System.out.println(ExcelUtils.getCellData(0, 1));
 			ExcelUtils.setCellData("Test Information ", 1, 3);
 			ExcelUtils.saveExcelFile(Constant.PATH_TEST_DATA_FOLDER+Constant.FILE_NAME);
+			
+			int rowCount = ExcelUtils.ExcelWSheet.getLastRowNum();
+			System.out.println(rowCount);
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
