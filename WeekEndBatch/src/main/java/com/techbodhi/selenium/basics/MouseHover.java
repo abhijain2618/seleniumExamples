@@ -17,7 +17,7 @@ public class MouseHover {
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		driver.get("http://www.onlinestore.toolsqa.wpengine.com");
+		driver.get("http://store.demoqa.com/");
 
 		WebElement element = driver
 				.findElement(By.linkText("Product Category"));

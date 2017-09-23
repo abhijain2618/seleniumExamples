@@ -15,8 +15,10 @@ public class FirstSeleniumTest {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//SystemProp systemProp = new SystemProp();
-		SystemProp.getFireFoxProperties();
-		WebDriver driver = new FirefoxDriver();
+//		SystemProp.getFireFoxProperties();
+//		WebDriver driver = new FirefoxDriver();
+		
+		WebDriver driver = SystemProp.getDriver();
 
 		driver.get("http://demoqa.com/registration/");
 		

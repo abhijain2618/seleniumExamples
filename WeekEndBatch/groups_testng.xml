@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test name="Test">
+		<parameter name="browserName" value="firefox" />
+		<groups>
+			<define name="include-regression">
+				<include name="regression" />
+				<include name="ui" />
+			</define>
+			<define name="include-end-to-end">
+				<include name="end-to-end" />
+				<include name="data-base" />
+			</define>
+			<run>
+				<include name="include-end-to-end" />
+			</run>
+		</groups>
+
+		<classes>
+			<class name="com.techbodhi.selenium.testng.DropDown" />
+			<class name="com.techbodhi.selenium.testng.TableElements" />
+		</classes>
+
+		<!-- <packages> <package name="com.techbodhi.testng" /> </packages> -->
+
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

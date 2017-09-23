@@ -4,11 +4,33 @@
   <artifactId>selenium-maven</artifactId>
   <version>0.0.1</version>
   <name>MavenWeekend</name>
-  <dependencies>
+	
+	<properties>
+		<poi.version>3.13</poi.version>
+	</properties>
+ 
+	<dependencies>
     <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
         <version>3.4.0</version>
     </dependency> 
+    
+    <dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>${poi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-scratchpad</artifactId>
+			<version>${poi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${poi.version}</version>
+		</dependency>
+    
   </dependencies>
 </project>
